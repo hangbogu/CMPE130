@@ -3,7 +3,7 @@
 using namespace std;
 
 // the most things we can store in the table
-const int MAX_SIZE = 600000;
+const int MAX_SIZE = 50000;
 
 class HashTable {
 public:
@@ -35,12 +35,23 @@ public:
 		// look for them at this linked list
 		Node* current = inventory[index];
 		int number = 0;
-		while (current->word != word ) {
+		while (current->word != word) {
 			number++;
 			current = current->next;
 		}
 
 		cout << "Found " << word << " in slot " << index << ", node " << number << endl;
+	}
+
+	unsigned int hash(string word) {
+		int value = 0;
+		// add up all the ASCII values
+		for (unsigned int i = 0; i < word.length(); i++) {
+			value = value * 31 + word[i];
+		}
+
+		// mod by size to prevent overflow
+		return value % MAX_SIZE;
 	}
 
 private:
@@ -53,3 +64,13 @@ private:
 	// the words are all stored in an array
 	Node* inventory[MAX_SIZE];
 };
+
+void main() {
+	HashTable a;
+	unsigned int number = 0;
+	for (unsigned int i = 0; i < 25000; i++) {
+		number = i;
+		a.insert(to_string(i));
+	}
+	cout << "done!";
+}
