@@ -30,11 +30,7 @@ public:
 
 	void search(string word) {
 		// hash the word
-<<<<<<< HEAD
 		unsigned int index = hash(word);
-=======
-		int index = hash(word);
->>>>>>> dac75fdb063db04665f5ace9753bc283d0c94937
 
 		// look for them at this linked list
 		Node* current = inventory[index];
