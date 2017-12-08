@@ -3,8 +3,11 @@
 A spellchecker implemented through a ternary directed acyclic word graph dictionary. 
 
 ## Installation ##
-To run the program at the command line:
+To compile the program at the command line:
+
 g++ TernaryDagDictionaryMain.cpp TernaryDagDictionary.cpp -lcurl
+
+To run the program:
 
 ./a.out
 
