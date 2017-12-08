@@ -5,7 +5,10 @@ A spellchecker implemented through a ternary directed acyclic word graph diction
 ## Installation ##
 To run the program at the command line:
 g++ TernaryDagDictionaryMain.cpp TernaryDagDictionary.cpp -lcurl
+
 ./a.out
+
+**Notes**
 
 -lcurl flag is required because of the <curl/curl.h> header file used to download the dictionary.
 
@@ -20,7 +23,9 @@ be displayed. Otherwise, the user will be notified that the word is not in the d
 ## Credits ##
 
 Terrence Gausi
+
 Christian Lopez
+
 Hangbo Gu
 
 ## License ##
